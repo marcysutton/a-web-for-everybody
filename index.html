@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>A Web for Everyone</title>
+
+		<meta name="description" content="A Web for Everyone">
+		<meta name="author" content="Marcy Sutton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/material.css">
+		<link rel="stylesheet" href="css/theme/marcysutton.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script src="lib/js/jquery-1.11.1.min.js"></script>
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<h1 class="offscreen">A Web for Everyone by Marcy Sutton</h1>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2 class="h3-style">Hi, SmashingConf Whistler!</h2>
+					<iframe title="1985 Breckenridge Ski Ballet" width="960" height="720"src="//www.youtube.com/embed/Awkqte1mgcs?rel=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h2>What if you couldn't:</h2>
+					<ul>
+						<li>use a mouse</li>
+						<li>see the screen</li>
+						<li>perceive colors</li>
+						<li>hear audio content</li>
+						<li>do ski ballet</li>
+					</ul>
+					<h3 class="h1-style" aria-hidden="true">?</h3>
+				</section>
+
+				<section>
+					<h2 class="h1-style" style="margin-bottom: 0.25em;">Web Accessibility</h2>
+					<p class="big-italic">Everyone can perceive, understand, navigate, and interact with the Web, and  they can contribute to the Web.</p>
+					<aside class="notes">
+					<p><a href="http://www.w3.org/WAI/intro/accessibility.php" target="_blank" title="Link opens in a new window">W3C definition</a></p>
+					<p>Millions of people have disabilities that affect their use of the Web.</p>
+					<p>Web accessibility also benefits people without disabilities.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Accessibility is about</h2>
+					<h3 class="h1-style" style="font-size: 14rem;">PEOPLE.</h3>
+				</section>
+
+				<section>
+					<h2 class="h1-style">A Web for Everyone</h2>
+					<p>Marcy Sutton, Developer @Substantial<br>Material Design Accessibility Engineer</p>
+					<p><a href="http://marcysutton.github.io/angular-a11y">http://marcysutton.github.io/a-web-for-everyone/</a></p>
+				</section>
+
+				<section>
+					<h2 class="h1-style">Assumptions about users</h2>
+				</section>
+
+				<section>
+					<ul class="checkboxes left-aligned">
+						<li class="checked">Disabled people travel.</li>
+						<li class="checked">Disabled people cook.</li>
+						<li class="checked">Disabled people work out.</li>
+						<li class="checked">Disabled people take pictures.</li>
+						<li class="checked">Disabled people drink whiskey.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2 class="h1-style">Disabled people are <br>early adopters.</h2>
+					<aside class="notes">
+						<p>And you know why? Because mobile devices improve quality of life.</p>
+						<p>Accessibility shouldn't be an afterthought.</p>
+					</aside>
+				</section>
+				
+				<section>
+					<h2>Web Components</h2>
+					<ul>
+						<li class="fragment">Custom elements</li>
+						<li class="fragment">Encapsulation</li>
+						<li class="fragment">Reinventing the web</li>
+						<li class="fragment">&lt;div&gt; soup</li>
+						<li class="fragment">Excuse me while I jump out a window</li>
+					</ul>
+					<aside class="notes">
+						It's about expectations: we expect that it would take no time at all to style and wire up a button. An &lt;md-button&gt; or &lt;core-whatever&gt; should make it as easy as possible to add an interactive element. When it doesn't work by default, we want to flip tables.
+						*Reinventing the wheel
+					</aside>
+				</section>
+
+				<section>
+					<h2>"Interactive" means something.</h2>
+					<ul>
+						<li><code>cursor: pointer;</code></li>
+						<li><code>element.on('click')</code></li>
+						<li><code>outline: none;</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="h3-style">Enable the keyboard!</h2>
+					<pre><code class="html">
+  &lt;core-item ng-click="nope()"&gt;&lt;/core-item&gt; // Non :(
+          </code></pre>
+
+					<pre><code class="html">
+  &lt;button ng-click="yep()"&gt;&lt;/button&gt;  // Oui! :)
+          </code></pre>
+
+					<pre><code class="html">
+  &lt;paper-button role="button" tabIndex="0"
+    ng-click="woohoo()" 
+    ng-keypress="woohoo()"&gt;
+  &lt;/paper-button&gt;
+          </code></pre>
+					<aside class="notes">
+					Challenge the concept of "interactive". PERCEIVABLE and OPERABLE. Robust. Understandable.
+					</aside>
+				</section>
+
+				<section>
+					<h2>"Semantic" means something.</h2>
+					<img src="img/Semantic_thumb5.png" style="min-height: 600px;" alt="Classic vs. semantic HTML">
+				</section>
+
+				<section>
+					<h2>Better Poly-mail Demo</h2>
+				</section>
+				
+				<section>
+					<h2>Shred</h2>
+					<img style="min-height: 660px;" src="img/ostrich-skiing.gif" alt="Ostrich skiing">
+				</section>
+
+				<section>
+					<h2>Airlines</h2>
+					<iframe width="960" height="720" src="//www.youtube.com/embed/8ZbYJSqE0EM?rel=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h2>Sass Focus &amp; Touch Styles</h2>
+				</section>
+
+				<section>
+					<h2>Scroll UI</h2>
+				</section>
+
+        <section>
+					<h2 class="h3-style">Handling Focus</h2>
+					<div class="full-screen-code">
+						<pre><code class="javascript">
+ $scope.$watch('airportIsSelected', function(newValue){
+  if(newValue){
+    $scope.pickerIsVisible = true;
+    
+    $('html,body').animate({
+      scrollTop: peoplePicker.offset().top
+    }, 600);
+
+    peoplePicker.find('button').first().focus();
+
+    $rootScope.$broadcast('statusUpdated', self.selectedAirport);
+   }
+ });
+						</code></pre>
+					</div>
+        </section>
+
+				<section>
+					<h2>Whiskey</h2>
+					<a href="https://drinkdistiller.com/#!/profile/manhattan-mary/top_shelf" target="_blank" title="Link opens in a new window"><img src="img/distiller-top-shelf.png" alt="Distiller's Top Shelf Feature"></a>
+				</section>
+
+				<section class="full-screen-code">
+					<h2>A11Y Concerns</h2>
+					<ul>
+						<li>Tab index</li>
+						<li>Focus styles</li>
+						<li>Text alternatives</li>
+						<li>Focus management</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Tab index</h2>
+
+				</section>
+				
+				<section>
+					<h2>Don't forget <code>:focus.</code></h2>
+					<pre><code class="css">
+  [tabIndex="0"] {
+    color: $linkColor;
+
+    &:focus, &:hover {
+      background-color: $linkColor;
+      color: $linkActiveColor;
+    }
+  }
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Managing focus</h2>
+					<pre><code class="coffeescript">
+ class App.FocusManager
+   constructor: ->
+     $('body').on 'focusin', (e) =>
+       @oldFocus = $(e.target)
+
+     App.bind 'rendered', (e) =>
+       return unless @oldFocus
+       @_focusById() if @oldFocus.data('focus-id')
+
+   _focusById: ->
+     focusId = @oldFocus.data('focus-id')
+     newFocus = $("[data-focus-id=#{focusId}]")
+     MyApp.focus(newFocus) if newFocus
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Interactive Tiles</h2>
+				</section>
+			
+        <section>
+					<h2>Tools</h2>
+					<ul>
+						<li>Your Keyboard</li>
+						<li>Android: TalkBack</li>
+						<li>iOS: VoiceOver</li>
+						<li>Mac: VoiceOver</li>
+						<li>Windows: JAWS, WindowEyes, NVDA</li>
+					</ul>
+        </section>
+
+        <section>
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="https://docs.angularjs.org/api/ngAria" target="_blank" title="Link opens in a new window">ngAria in Angular</a></li>
+            <li><a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">Using ARIA in HTML</a></li>
+            <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/" target="_blank" title="Link opens in a new window">Auditing for Accessibility</a></li>
+            <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en" target="_blank" title="Link opens in a new window">Chrome Accessibility Dev Tools</a></li>
+            <li><a href="http://webaim.org/projects/screenreadersurvey5/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey</a></li>
+            <li><a href="http://leaverou.github.io/whathecolor/" target="_blank" title="Link opens in a new window">Color Contrast Checker</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="margin-top: 0.5em;">Thanks, ngEurope!</h2>
+        </section>
+			</div>
+
+			<footer>
+        <p class="copyright">A Web for Everyone<br>
+          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com" target="_blank" title="Link opens in a new window">MarcySutton.com</a></p>
+      </footer>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+		    // when the presentation is scaled to fit different resolutions. Can be
+		    // specified using percentage units.
+		    width: 1440,
+		    height: 900,
+
+		    // Factor of the display size that should remain empty around the content
+		    margin: 0.1,
+
+		    // Bounds for smallest/largest possible scale to apply to content
+		    minScale: 0.2,
+		    maxScale: 1.0,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/accessibility-helpers/accessibility-helpers.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'lib/js/slides.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
