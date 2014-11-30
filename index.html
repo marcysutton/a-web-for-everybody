@@ -92,6 +92,10 @@
               <img src="img/a11y-montage/amy-guide-dog-thestar.jpg" alt="Woman with Guide Dog">
             </a>
           </div>
+          <aside class="notes">
+						Why I care about acccessibility.
+
+          </aside>
 				</section>
 
 				<section>
@@ -116,23 +120,23 @@
 					"Accessibility is a niche, a small audience." 
 					"Disabled people don't need a fitness app."
 					"Why would a blind person need a camera?"
-					"Accessibility isn't a priority."
+					By considering that a disabled person would have a need for your product, you are a supporter of accessibility.
 					</aside>
 				</section>
 
 				<section>
 					<ul class="checkboxes left-aligned">
-						<li class="checked">Disabled people travel.</li>
 						<li class="checked">Disabled people cook.</li>
+						<li class="checked">Disabled people travel.</li>
 						<li class="checked">Disabled people work out.</li>
 						<li class="checked">Disabled people take pictures.</li>
-						<li class="checked">Disabled people drink whiskey.</li>
+						<li class="checked">Disabled adults drink whiskey.</li>
 					</ul>
 				</section>
 
 				<section>
 					<img src="img/sassy-tree.jpg" alt="Christmas tree" style="max-height: 620px;">
-					<blockquote class="small">&ldquo;The tree is done! Pic courtesy of BlindChick photography&hellip; bad focus is strictly the blind girl&rsquo;s fault.&rdquo; -Sarah Outwater</blockquote>
+					<blockquote class="small">&ldquo;The tree is done! Pic courtesy of BlindChick photography&hellip; bad focus is strictly the blind girl&rsquo;s fault.&rdquo; -Sarah Outwater on Facebook</blockquote>
 				</section>
 				
 				<section>
@@ -153,9 +157,10 @@
 						<li>Social networks</li>
 						<li>Image recognition</li>
 					</ul>
+					<aside class="notes">
+						Mobile devices improve quality of life.
+					</aside>
 				</section>
-				
-				<!-- transition: high-level to specific -->
 
 				<section>
 					<h2>Recipe Component</h2>
@@ -338,16 +343,6 @@
 					<a href="https://drinkdistiller.com/#!/profile/manhattan-mary/top_shelf" target="_blank" title="Link opens in a new window"><img src="img/distiller-top-shelf.png" alt="DrinkDistiller.com"></a>
 				</section>
 
-				<!-- <section class="full-screen-code">
-					<h2>Distiller A11Y</h2>
-					<ul>
-						<li>Responsive Images</li>
-						<li>Headings</li>
-						<li>Text alternatives</li>
-						<li>Focus management</li>
-					</ul>
-				</section> -->
-
 				<section>
 					<h2>Responsive Images</h2>
 					<pre><code class="html">
@@ -359,8 +354,26 @@
          background-size: cover;
          display: block;
        }
+
 					</code></pre>
 					<p><a href="http://codepen.io/marcysutton/pen/yJFjg">Codepen Experiment</a></p>
+				</section>
+
+				<section data-transition="none">
+					<h2>Responsive Images (alt)</h2>
+					<pre><code class="html">
+  &lt;figure class="notes-table"&gt;
+    &lt;div class="visuallyhidden"&gt;
+      <!-- markup for tabular data -->
+    &lt;/div&gt;
+  &lt;/figure&gt;
+					</code></pre>
+					<pre><code class="css">
+  /* fancy media query stuff here */
+  .notes-table {
+    background-image: url(flavor-notes-table.png);
+  }
+					</code></pre>
 				</section>
 				
 				<section>
@@ -397,6 +410,7 @@
 						<li>Mac: VoiceOver</li>
 						<li>Windows: JAWS, WindowEyes, NVDA</li>
 					</ul>
+					<p>Related: <a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/" target="_blank" title="Link opens a new window">How I Audit a Website for Accessibility</a></p>
         </section>
 
         <section>
@@ -409,6 +423,14 @@
             <li><a href="http://webaim.org/projects/screenreadersurvey5/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey</a></li>
             <li><a href="http://leaverou.github.io/whathecolor/" target="_blank" title="Link opens in a new window">Color Contrast Checker</a></li>
           </ul>
+        </section>
+
+        <section>
+					<h2 class="h1-style">It's up to us to make the Web more accessible.</h2>
+					<p>Include accessibility on every project.</p>
+					<aside class="notes">
+					Patience vs. making noise
+					</aside>
         </section>
 
         <section>

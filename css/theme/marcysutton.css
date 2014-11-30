@@ -122,21 +122,23 @@
   .reveal footer {
     bottom: 0px;
     left: 0;
-    font-size: 45%;
     height: auto;
     position: fixed;
-    padding-bottom: 30px;
     text-align: left;
     width: 100%;
     z-index: 11; }
     .reveal footer .copyright {
       display: inline-block;
-      padding: 5px 15px;
+      font-size: 1rem;
+      padding: 1rem;
       vertical-align: middle; }
+      @media (max-width: 768px) {
+        .reveal footer .copyright {
+          font-size: 0.5rem; } }
     .reveal footer .footer-link {
       display: block;
       float: right;
-      padding: 5px 15px;
+      padding: 1rem;
       position: relative;
       z-index: 1; }
     .reveal footer [aria-hidden=true] {
