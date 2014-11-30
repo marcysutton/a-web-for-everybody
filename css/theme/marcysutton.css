@@ -166,6 +166,7 @@
   color: #3f51b5;
   font-family: "RobotoDraft", sans-serif, sans-serif;
   letter-spacing: 0.02em;
+  line-height: 1.15;
   margin: 0 0 20px 0;
   text-transform: none; }
 .reveal p, .reveal small, .reveal ul, .reveal ol, .reveal div.large-tag, .reveal figcaption, .reveal blockquote, .reveal dd, .reveal dt {
