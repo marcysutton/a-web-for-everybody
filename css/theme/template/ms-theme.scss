@@ -251,7 +251,7 @@ body {
   blockquote {
     background-color: transparent;
     box-shadow: none;
-    font-style: italic;
+    font-style: normal;
     line-height: 100%;
     font-size: 2em;
     text-align: left;
@@ -261,7 +261,7 @@ body {
       margin-bottom: 0.75em;
     }
     &.small {
-      font-size: 1.15em;
+      font-size: 1em;
       line-height: 1.3;
     }
     span {
@@ -273,6 +273,11 @@ body {
       // color: $linkColor;
       font-weight: normal;
       font-size: 115%;
+    }
+    cite {
+      display: block;
+      font-style: italic;
+      text-align: right;
     }
   }
   .left-align strong {
