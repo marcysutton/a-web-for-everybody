@@ -145,23 +145,26 @@ body {
   footer {
     bottom: 0px;
     left: 0;
-    font-size: 45%;
     height: auto;
     position: fixed;
-    padding-bottom: 30px;
     text-align: left;
     width: 100%;
     z-index: 11;
 
     .copyright {
       display: inline-block;
-      padding: 5px 15px;
+      font-size: 1rem;
+      padding: 1rem;
       vertical-align: middle;
+
+      @media #{$mobile} {
+        font-size: 0.5rem;
+      }
     }
     .footer-link {
       display: block;
       float: right;
-      padding: 5px 15px;
+      padding: 1rem;
       position: relative;
       z-index: 1;
     }
@@ -247,7 +250,8 @@ body {
   }
   blockquote {
     background-color: transparent;
-    font-style: italic;
+    box-shadow: none;
+    font-style: normal;
     line-height: 100%;
     font-size: 2em;
     text-align: left;
@@ -255,6 +259,10 @@ body {
     &.large {
       font-size: 3em;
       margin-bottom: 0.75em;
+    }
+    &.small {
+      font-size: 1em;
+      line-height: 1.3;
     }
     span {
       display: block;
@@ -265,6 +273,11 @@ body {
       // color: $linkColor;
       font-weight: normal;
       font-size: 115%;
+    }
+    cite {
+      display: block;
+      font-style: italic;
+      text-align: right;
     }
   }
   .left-align strong {
@@ -318,8 +331,8 @@ body {
         position: absolute;
       }
       figcaption {
-        color: $tertiaryColor;
-        font-size: 0.65em;
+        // color: $secondaryColor;
+        // font-size: 0.65em;
         margin: 0;
         padding: 0.2em 0 0.75em;
         text-align: center;
@@ -411,6 +424,99 @@ body {
     &.smallest li {
       font-size: 0.75em;
       letter-spacing: 0;
+    }
+  }
+  .collage {
+    min-height: 700px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    a {
+      margin: 0;
+      position: absolute;
+      max-width: 420px;
+  
+      transform:rotate(-5deg);
+      -ms-transform:rotate(-5deg); 
+      -moz-transform:rotate(-5deg);
+      -webkit-transform:rotate(-5deg);
+      -o-transform:rotate(-5deg);
+
+      -webkit-transition: all 0.2s linear;
+      -moz-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      -ms-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      
+      /*** Fix for Webkit to resolve the flickering issue
+           Suggested by erikhatfield ***/
+      -webkit-transform-style: preserve-3d;
+  
+      &:nth-child(2) {
+        transform:rotate(-8deg);
+        -ms-transform:rotate(-8deg); 
+        -moz-transform:rotate(-8deg);
+        -webkit-transform:rotate(-8deg);
+        -o-transform:rotate(-8deg);
+        margin-top: 260px;
+        margin-left: 30%;
+      }
+
+      &:nth-child(3) {
+        transform:rotate(2deg);
+        -ms-transform:rotate(2deg); 
+        -moz-transform:rotate(2deg);
+        -webkit-transform:rotate(2deg);
+        -o-transform:rotate(2deg);
+        margin-left: 32%;
+      }
+
+      &:nth-child(4) {
+        transform:rotate(-8deg);
+        -ms-transform:rotate(-8deg); 
+        -moz-transform:rotate(-8deg);
+        -webkit-transform:rotate(-8deg);
+        -o-transform:rotate(-8deg);
+        margin-left: 65%;
+      }
+
+      &:nth-child(5) {
+        transform:rotate(7deg);
+        -ms-transform:rotate(7deg); 
+        -moz-transform:rotate(7deg);
+        -webkit-transform:rotate(7deg);
+        -o-transform:rotate(7deg);
+        margin-left: 60%;
+        margin-top: 260px;
+      }
+    
+     img {
+        border: none;
+        margin: 0;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      &:hover, &:focus { 
+        box-shadow: none;
+        z-index: 999;
+        transform:rotate(0deg);
+        -ms-transform:rotate(0deg); 
+        -moz-transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+
+        & > img {
+          box-shadow: none;
+        }
+      }
     }
   }
 }

@@ -44,6 +44,8 @@ $separatorHeight: 5px;
 $selectionBackgroundColor: #97948f;
 $selectionColor: $white;
 
+$mobile: "(max-width: 768px)";
+
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin bodyBackground() {
