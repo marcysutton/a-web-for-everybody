@@ -213,6 +213,7 @@
 				
 				<section>
 					<h2>Revisiting the Recipe Component</h2>
+					<a href="demos/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox-a11y.png" alt="Accessible Listbox Web Component" style="min-height: 500px;"></a>
 				</section>
 
 				<section>
@@ -256,7 +257,7 @@
 
 				<section>
 					<h2>"Semantic" means something.</h2>
-					<img src="img/Semantic_thumb5.png" style="min-height: 600px;" alt="Classic vs. semantic HTML">
+					<img src="img/generic-vs-semantic.png" style="min-height: 600px;" alt="Generic vs. semantic HTML">
 				</section>
 
 				<section>
@@ -335,13 +336,12 @@
         <section>
 					<h2>Alerting the User</h2>
 					<pre><code class="html">
-  &lt;live-region level="polite"&gt;&lt;/live-region&gt;
+  &lt;live-region aria-live="polite"&gt;&lt;/live-region&gt;
 					</code></pre>
 					<pre><code class="javascript" style="max-height: 540px;">
   function liveRegionDirective($scope, $element, $attrs) {
     element.attr({
-      'role' : 'region',
-      'aria-live': $attrs.level
+      'role' : 'region'
     });
     $scope.$on('statusUpdated', function(scope, message) {
       $element.html(message.text);
