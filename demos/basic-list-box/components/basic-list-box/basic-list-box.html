@@ -180,10 +180,8 @@ Polymer({
    * @method setActiveDescendant
    */
   setActiveDescendant: function(){
-    if(this.getAttribute( "aria-activedescendant" ) == null) {
-      var activeChildId = this.childBaseId + this.selected;
-      this.setAttribute( "aria-activedescendant",  activeChildId );
-    }
+    var activeChildId = this.childBaseId + this.selected;
+    this.setAttribute( "aria-activedescendant",  activeChildId );
   },
 
   /**
