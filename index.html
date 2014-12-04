@@ -44,7 +44,6 @@
 		<h1 class="offscreen">A Web for Everyone by Marcy Sutton</h1>
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<h2 class="h3-style">Hi, SmashingConf Whistler!</h2>
@@ -110,7 +109,7 @@
 						<li>Assumptions</li>
 						<li>Web Components</li>
 						<li>Accessible UIs</li>
-						<li>Resources</li>
+						<li>Resources*</li>
 					</ul>
 				</section>
 
@@ -129,8 +128,8 @@
 						<li class="checked">Disabled people cook.</li>
 						<li class="checked">Disabled people travel.</li>
 						<li class="checked">Disabled people work out.</li>
+						<li class="checked">Disabled people drink whiskey.</li>
 						<li class="checked">Disabled people take pictures.</li>
-						<li class="checked">Disabled adults drink whiskey.</li>
 					</ul>
 				</section>
 
@@ -152,9 +151,9 @@
 				<section>
 					<h2>Tech Lifelines</h2>
 					<ul>
+						<li>Social networks</li>
 						<li>Text-to-speech</li>
 						<li>Braille/tactile devices</li>
-						<li>Social networks</li>
 						<li>Live captioning</li>
 						<li>Accessible maps</li>
 						<li>Image recognition</li>
@@ -166,8 +165,23 @@
 				</section>
 
 				<section>
+					<h2 class="h1-style">Include accessibility <br>from the start.</h2>
+				</section>
+
+				<section>
+					<h2>The Future is Here</h2>
+					<img src="img/web-components-org.jpg" alt="WebComponents.org redesigned with tacos">
+					<aside class="notes">
+						What are Web Components?
+					</aside>
+				</section>
+
+				<section>
 					<h2>Recipe Component</h2>
 					<a href="http://basic-web-components.github.io/components/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox.png" alt="Listbox Web Component" style="min-height: 500px;"></a>
+					<aside class="notes">
+						What is the accessibility problem?
+					</aside>
 				</section>
 
 				<section>
@@ -217,11 +231,11 @@
 				</section>
 
 				<section>
-					<h2>Like a boss.</h2>
 					<img style="min-height: 600px;" src="img/ostrich-skiing.gif" alt="Ostrich skiing">
 				</section>
 				
 				<section>
+					<h2 class="h3-style">On inaccessible user interfaces:</h2>
 					<p><a href="https://twitter.com/dalecruse/status/535571703611785216"><img src="img/dale-tweet.png" alt="@marcysutton Here’s the thing: The web is accessible by nature. We developers turn off features. Why? Somehow we still don’t know our tools. Dale Cruse (@dalecruse)November 20, 2014" class="plain"></a></p>
 				</section>
 
@@ -237,18 +251,18 @@
 				<section>
 					<h2 class="h3-style">Enable the keyboard!</h2>
 					<pre><code class="html">
-  &lt;core-item ng-click="nope()"&gt;&lt;/core-item&gt;
+ &lt;core-item style="cursor:pointer;"&gt;Inbox&lt;/core-item&gt; // NOPE
           </code></pre>
 
 					<pre><code class="html">
-  &lt;button ng-click="yep()"&gt;&lt;/button&gt;
+ &lt;button ng-click="clickHandler()"&gt;Inbox&lt;/button&gt; // Yep!
           </code></pre>
 
 					<pre><code class="html">
-  &lt;paper-button role="button" tabIndex="0"
-    ng-click="woohoo()" 
-    ng-keypress="woohoo()"&gt;
-  &lt;/paper-button&gt;
+ &lt;md-button role="button" tabIndex="0"
+    ng-click="heckYeah()" ng-keypress="heckYeah()"&gt;
+    Inbox
+ &lt;/md-button&gt;
           </code></pre>
 					<aside class="notes">
 					Challenge the concept of "interactive". PERCEIVABLE and OPERABLE. Robust. Understandable.
@@ -264,22 +278,15 @@
 					<h2>Adding semantics <br>to components</h2>
 					<ul>
 						<li>Use native elements</li>
-						<li>Add <a href="http://www.w3.org/TR/2009/WD-wai-aria-practices-20090224/" target="_blank" title="Link opens in a new window">ARIA</a> attributes</li>
-						<li><a href="http://pascalprecht.github.io/2014/07/14/inheritance-and-composition-with-polymer/" target="_blank" title="Link opens in a new window">Extend</a> native elements*</li>
+						<li>Add <a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">ARIA</a> attributes</li>
+						<li><a href="http://pascalprecht.github.io/2014/07/14/inheritance-and-composition-with-polymer/" target="_blank" title="Link opens in a new window">Extend</a> native elements</li>
 					</ul>
 				</section>
 
-				<!--<section>
-					<h2>Interactive &amp; Semantic Demo</h2>
-				</section>-->
-
 				<section>
-					<h2>People Will Travel</h2>
-					<iframe width="960" height="720" src="//www.youtube.com/embed/8ZbYJSqE0EM?rel=0" frameborder="0" allowfullscreen></iframe>
-				</section>
-
-				<section>
-					<h2><a href="http://marcysutton.github.io/angular-a11y/demos/scroll-ui/" target="_blank" title="Link opens in a new window">Accessible Scroll UI Demo</a></h2>
+					<h2 style="margin-bottom:0;">People Will Travel</h2>
+					<p style="margin-bottom: 1em;"><a href="http://virginamerica.com/" target="_blank">keyboard demo</a></p>
+					<iframe width="960" height="600" src="//www.youtube.com/embed/8ZbYJSqE0EM?rel=0" frameborder="0" allowfullscreen></iframe>
 				</section>
 
 				<section>
@@ -312,14 +319,19 @@
 					</code></pre>
 				</section>
 
+				<section>
+					<a href="http://marcysutton.github.io/angular-a11y/demos/scroll-ui/" target="_blank" title="Link opens in a new window">
+						<h2>Let's Try This Again</h2>
+						<p>Accessible Scroll UI Demo</p>
+					</a>
+				</section>
+
         <section>
 					<h2>Handling Focus</h2>
 					<div class="full-screen-code">
 						<pre><code class="javascript">
  $scope.$watch('airportIsSelected', function(newValue){
-  if(newValue){
-    $scope.pickerIsVisible = true;
-    
+  if(newValue){  
     $('html,body').animate({
       scrollTop: peoplePicker.offset().top
     }, 600);
@@ -371,12 +383,12 @@
 					<p><a href="http://codepen.io/marcysutton/pen/yJFjg">Codepen Experiment</a></p>
 				</section>
 
-				<section data-transition="none">
+				<!-- <section data-transition="none">
 					<h2>Responsive Images (alt)</h2>
 					<pre><code class="html">
   &lt;figure class="notes-table"&gt;
     &lt;div class="visuallyhidden"&gt;
-      <!-- markup for tabular data -->
+      &lt;!-- markup for tabular data --&gt;
     &lt;/div&gt;
   &lt;/figure&gt;
 					</code></pre>
@@ -387,11 +399,11 @@
   }
 					</code></pre>
 				</section>
-				
-				<section>
+				 -->
+				<!-- <section>
 					<h2>Headings</h2>
 					<img src="img/distiller_headings.png" style="min-height: 500px;" alt="Headings on DrinkDistiller.com">
-				</section>
+				</section> -->
 
 				<section>
 					<h2>Focus Management</h2>
@@ -439,7 +451,6 @@
 
         <section>
 					<h2 class="h1-style">It's up to us to make the Web more accessible.</h2>
-					<p>Include accessibility on every project.</p>
 					<aside class="notes">
 					We're being told "this is the future of the Web" yet often it's completely inaccessible.
 					Patience vs. making noise.
