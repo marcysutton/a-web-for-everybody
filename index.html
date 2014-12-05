@@ -4,16 +4,16 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>A Web for Everyone</title>
+		<title>A Web for Everybody</title>
 
-		<meta name="description" content="A Web for Everyone">
+		<meta name="description" content="A Web for Everybody">
 		<meta name="author" content="Marcy Sutton">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		
+
 		<link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet" type="text/css">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
@@ -41,7 +41,7 @@
 	</head>
 
 	<body>
-		<h1 class="offscreen">A Web for Everyone by Marcy Sutton</h1>
+		<h1 class="offscreen">A Web for Everybody by Marcy Sutton</h1>
 		<div class="reveal">
 
 			<div class="slides">
@@ -53,11 +53,11 @@
 				<section>
 					<h2>What if you couldn't:</h2>
 					<ul>
+						<li>do ski ballet</li>
 						<li>use a mouse</li>
 						<li>see the screen</li>
 						<li>perceive colors</li>
 						<li>hear audio content</li>
-						<li>do ski ballet</li>
 					</ul>
 					<h3 class="h1-style" aria-hidden="true">?</h3>
 				</section>
@@ -98,8 +98,8 @@
 				</section>
 
 				<section>
-					<h2 class="h1-style">A Web for Everyone</h2>
-					<p>Marcy Sutton, Developer @Substantial<br>Material Design Accessibility Engineer</p>
+					<h2 class="h1-style">A Web for Everybody</h2>
+					<p>Marcy Sutton, Developer @Substantial<br>Angular.js Accessibility &amp; Material Design</p>
 					<p><a href="http://marcysutton.github.io/angular-a11y">http://marcysutton.github.io/a-web-for-everyone/</a></p>
 				</section>
 
@@ -109,14 +109,14 @@
 						<li>Assumptions</li>
 						<li>Web Components</li>
 						<li>Accessible UIs</li>
-						<li>Resources*</li>
+						<li>Resources</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2 class="h1-style">Assumptions about Users</h2>
 					<aside class="notes">
-					"Accessibility is a niche, a small audience." 
+					"Accessibility is a niche, a small audience."
 					"Disabled people don't need a fitness app."
 					"Why would a blind person need a camera?"
 					By considering that a disabled person would have a need for your product, you are a supporter of accessibility.
@@ -139,7 +139,7 @@
 					</blockquote>
 					<img src="img/sassy-tree.jpg" alt="Christmas tree" style="max-height: 620px;">
 				</section>
-				
+
 				<section>
 					<h2 class="h1-style">Disabled people are <br>early adopters.</h2>
 					<aside class="notes">
@@ -153,10 +153,11 @@
 					<ul>
 						<li>Social networks</li>
 						<li>Text-to-speech</li>
+						<li>Speech recognition</li>
 						<li>Braille/tactile devices</li>
 						<li>Live captioning</li>
-						<li>Accessible maps</li>
 						<li>Image recognition</li>
+						<li>Accessible maps</li>
 					</ul>
 					<aside class="notes">
 						Mobile devices improve quality of life.
@@ -168,6 +169,171 @@
 					<h2 class="h1-style">Include accessibility <br>from the start.</h2>
 				</section>
 
+        <section>
+          <h2 class="h3-style">On inaccessible user interfaces:</h2>
+          <p><a href="https://twitter.com/dalecruse/status/535571703611785216"><img src="img/dale-tweet.png" alt="@marcysutton Here’s the thing: The web is accessible by nature. We developers turn off features. Why? Somehow we still don’t know our tools. Dale Cruse (@dalecruse)November 20, 2014" class="plain"></a></p>
+        </section>
+
+        <section>
+          <h2>"Interactive" means something.</h2>
+          <ul>
+            <li><code>cursor: pointer;</code></li>
+            <li><code>element.on('click')</code></li>
+            <li><code>outline: none;</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="h3-style">Enable the keyboard!</h2>
+          <pre><code class="html">
+ &lt;button ng-click="clickHandler()"&gt;Inbox&lt;/button&gt;
+          </code></pre>
+
+          <pre><code class="html">
+ &lt;md-button role="button" tabIndex="0"
+    ng-click="heckYeah()" ng-keypress="heckYeah()"&gt;
+    Inbox
+ &lt;/md-button&gt;
+          </code></pre>
+
+          <aside class="notes">
+          Challenge the concept of "interactive". PERCEIVABLE and OPERABLE. Robust. Understandable.
+          </aside>
+        </section>
+
+        <section>
+          <h2>"Semantic" means something.</h2>
+          <img src="img/generic-vs-semantic.png" style="min-height: 600px;" alt="Generic vs. semantic HTML">
+        </section>
+
+        <section>
+          <h2>Adding semantics <br>to components</h2>
+          <ul>
+            <li>Use native elements</li>
+            <li>Add <a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">ARIA</a> attributes</li>
+            <li><a href="http://pascalprecht.github.io/2014/07/14/inheritance-and-composition-with-polymer/" target="_blank" title="Link opens in a new window">Extend</a> native elements</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="margin-bottom:0;">People Will Travel</h2>
+          <p style="margin-bottom: 1em;"><a href="http://virginamerica.com/" target="_blank">keyboard demo</a></p>
+          <iframe width="960" height="600" src="//www.youtube.com/embed/8ZbYJSqE0EM?rel=0" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section>
+          <h2>Sass</h2>
+          <pre><code class="css">
+  .navlist--main > li > a
+    color: $white
+    display: block
+
+    &amp;:hover
+      text-decoration: underline
+
+          </code></pre>
+        </section>
+
+        <section data-transition="none">
+          <h2>Sass (corrected)</h2>
+          <pre><code class="css">
+  .navlist--main > li > a
+    color: $white
+    display: block
+
+    &amp;:hover, &amp;:focus
+      text-decoration: underline
+
+          </code></pre>
+        </section>
+
+        <section>
+          <a href="http://marcysutton.github.io/angular-a11y/demos/scroll-ui/" target="_blank" title="Link opens in a new window">
+            <h2>Let's Try This Again</h2>
+            <p>Accessible Scroll UI Demo</p>
+          </a>
+        </section>
+
+        <section>
+          <h2>Handling Focus</h2>
+          <div class="full-screen-code">
+            <pre><code class="javascript">
+ $scope.$watch('airportIsSelected', function(newValue){
+  if(newValue){
+    $('html,body').animate({
+      scrollTop: peoplePicker.offset().top
+    }, 600);
+
+    peoplePicker.find('button').first().focus();
+
+    $rootScope.$broadcast('statusUpdated', self.selectedAirport);
+   }
+ });
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Alerting the User</h2>
+          <pre><code class="html">
+  &lt;status-bar aria-live="polite"&gt;&lt;/status-bar&gt;
+          </code></pre>
+          <pre><code class="javascript" style="max-height: 540px;">
+  function statusBarDirective($scope, $element, $attrs) {
+    element.attr({
+      'role' : 'region'
+    });
+    $scope.$on('statusUpdated', function(scope, message) {
+      $element.html(message.text);
+    });
+  }
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Whiskey Business</h2>
+          <a href="https://drinkdistiller.com/#!/profile/manhattan-mary/top_shelf" target="_blank" title="Link opens in a new window"><img src="img/distiller-top-shelf.png" alt="DrinkDistiller.com"></a>
+        </section>
+
+        <section>
+          <h2>Focus Management</h2>
+          <pre><code class="coffeescript">
+ class App.FocusManager
+   constructor: ->
+     $('body').on 'focusin', (e) =>
+       @oldFocus = $(e.target)
+
+     App.bind 'rendered', (e) =>
+       return unless @oldFocus
+       @_focusById() if @oldFocus.data('focus-id')
+
+   _focusById: ->
+     focusId = @oldFocus.data('focus-id')
+     newFocus = $("[data-focus-id=#{focusId}]")
+     MyApp.focus(newFocus) if newFocus
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Responsive Images</h2>
+          <pre><code class="html">
+  &lt;div role="img" style="background: url(corner-creek.gif)"
+       aria-label="Corner Creek Kentucky Bourbon"&gt;&lt;/div&gt;
+          </code></pre>
+          <pre><code class="css">
+       [role=img] {
+         background-size: cover;
+         display: block;
+       }
+
+          </code></pre>
+          <p><a href="http://codepen.io/marcysutton/pen/yJFjg">Codepen Experiment</a></p>
+        </section>
+
+        <section>
+          <img style="min-height: 600px;" src="img/ostrich-skiing.gif" alt="Ostrich skiing">
+        </section>
+
 				<section>
 					<h2>The Future is Here</h2>
 					<img src="img/web-components-org.jpg" alt="WebComponents.org redesigned with tacos">
@@ -177,7 +343,7 @@
 				</section>
 
 				<section>
-					<h2>Recipe Component</h2>
+					<h2>Typical Web Component</h2>
 					<a href="http://basic-web-components.github.io/components/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox.png" alt="Listbox Web Component" style="min-height: 500px;"></a>
 					<aside class="notes">
 						What is the accessibility problem?
@@ -224,228 +390,35 @@
 					</ul>
 					<p>Source: <a href="https://www.polymer-project.org/articles/accessible-web-components.html" target="_blank" title="Link opens in a new window">Accessible Web Components, Part 1</a></p>
 				</section>
-				
+
 				<section>
-					<h2>Revisiting the Recipe Component</h2>
+					<h2>Revisiting the Basic List Box</h2>
 					<a href="demos/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox-a11y.png" alt="Accessible Listbox Web Component" style="min-height: 500px;"></a>
 				</section>
 
-				<section>
-					<img style="min-height: 600px;" src="img/ostrich-skiing.gif" alt="Ostrich skiing">
-				</section>
-				
-				<section>
-					<h2 class="h3-style">On inaccessible user interfaces:</h2>
-					<p><a href="https://twitter.com/dalecruse/status/535571703611785216"><img src="img/dale-tweet.png" alt="@marcysutton Here’s the thing: The web is accessible by nature. We developers turn off features. Why? Somehow we still don’t know our tools. Dale Cruse (@dalecruse)November 20, 2014" class="plain"></a></p>
-				</section>
-
-				<section>
-					<h2>"Interactive" means something.</h2>
-					<ul>
-						<li><code>cursor: pointer;</code></li>
-						<li><code>element.on('click')</code></li>
-						<li><code>outline: none;</code></li>
-					</ul>
-				</section>
-
-				<section>
-					<h2 class="h3-style">Enable the keyboard!</h2>
-					<pre><code class="html">
- &lt;core-item style="cursor:pointer;"&gt;Inbox&lt;/core-item&gt; // NOPE
-          </code></pre>
-
-					<pre><code class="html">
- &lt;button ng-click="clickHandler()"&gt;Inbox&lt;/button&gt; // Yep!
-          </code></pre>
-
-					<pre><code class="html">
- &lt;md-button role="button" tabIndex="0"
-    ng-click="heckYeah()" ng-keypress="heckYeah()"&gt;
-    Inbox
- &lt;/md-button&gt;
-          </code></pre>
-					<aside class="notes">
-					Challenge the concept of "interactive". PERCEIVABLE and OPERABLE. Robust. Understandable.
-					</aside>
-				</section>
-
-				<section>
-					<h2>"Semantic" means something.</h2>
-					<img src="img/generic-vs-semantic.png" style="min-height: 600px;" alt="Generic vs. semantic HTML">
-				</section>
-
-				<section>
-					<h2>Adding semantics <br>to components</h2>
-					<ul>
-						<li>Use native elements</li>
-						<li>Add <a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">ARIA</a> attributes</li>
-						<li><a href="http://pascalprecht.github.io/2014/07/14/inheritance-and-composition-with-polymer/" target="_blank" title="Link opens in a new window">Extend</a> native elements</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2 style="margin-bottom:0;">People Will Travel</h2>
-					<p style="margin-bottom: 1em;"><a href="http://virginamerica.com/" target="_blank">keyboard demo</a></p>
-					<iframe width="960" height="600" src="//www.youtube.com/embed/8ZbYJSqE0EM?rel=0" frameborder="0" allowfullscreen></iframe>
-				</section>
-
-				<section>
-					<h2>Sass</h2>
-					<pre><code class="css">
-  .navlist--main>li>a {
-    color: #fff;
-    display: block
-  }
-  .no-touch .navlist--main>li>a:hover {
-    text-decoration: underline
-  }
-
-
-					</code></pre>
-				</section>
-
-				<section data-transition="none">
-					<h2>Sass (corrected)</h2>
-					<pre><code class="css">
-  .navlist--main>li>a {
-    color: #fff;
-    display: block
-  }
-  .no-touch .navlist--main>li>a:hover,
-  .no-touch .navlist--main>li>a:focus {
-    text-decoration: underline
-  }
-
-					</code></pre>
-				</section>
-
-				<section>
-					<a href="http://marcysutton.github.io/angular-a11y/demos/scroll-ui/" target="_blank" title="Link opens in a new window">
-						<h2>Let's Try This Again</h2>
-						<p>Accessible Scroll UI Demo</p>
-					</a>
-				</section>
-
         <section>
-					<h2>Handling Focus</h2>
-					<div class="full-screen-code">
-						<pre><code class="javascript">
- $scope.$watch('airportIsSelected', function(newValue){
-  if(newValue){  
-    $('html,body').animate({
-      scrollTop: peoplePicker.offset().top
-    }, 600);
-
-    peoplePicker.find('button').first().focus();
-
-    $rootScope.$broadcast('statusUpdated', self.selectedAirport);
-   }
- });
-						</code></pre>
-					</div>
-        </section>
-
-        <section>
-					<h2>Alerting the User</h2>
-					<pre><code class="html">
-  &lt;live-region aria-live="polite"&gt;&lt;/live-region&gt;
-					</code></pre>
-					<pre><code class="javascript" style="max-height: 540px;">
-  function liveRegionDirective($scope, $element, $attrs) {
-    element.attr({
-      'role' : 'region'
-    });
-    $scope.$on('statusUpdated', function(scope, message) {
-      $element.html(message.text);
-    });
-  }
-					</code></pre>
-        </section>
-
-				<section>
-					<h2>Whiskey Business</h2>
-					<a href="https://drinkdistiller.com/#!/profile/manhattan-mary/top_shelf" target="_blank" title="Link opens in a new window"><img src="img/distiller-top-shelf.png" alt="DrinkDistiller.com"></a>
-				</section>
-
-				<section>
-					<h2>Responsive Images</h2>
-					<pre><code class="html">
-  &lt;div role="img" style="background: url(corner-creek.gif)"
-       aria-label="Corner Creek Kentucky Bourbon"&gt;&lt;/div&gt;
-					</code></pre>
-					<pre><code class="css">
-       [role=img] {
-         background-size: cover;
-         display: block;
-       }
-
-					</code></pre>
-					<p><a href="http://codepen.io/marcysutton/pen/yJFjg">Codepen Experiment</a></p>
-				</section>
-
-				<!-- <section data-transition="none">
-					<h2>Responsive Images (alt)</h2>
-					<pre><code class="html">
-  &lt;figure class="notes-table"&gt;
-    &lt;div class="visuallyhidden"&gt;
-      &lt;!-- markup for tabular data --&gt;
-    &lt;/div&gt;
-  &lt;/figure&gt;
-					</code></pre>
-					<pre><code class="css">
-  /* fancy media query stuff here */
-  .notes-table {
-    background-image: url(flavor-notes-table.png);
-  }
-					</code></pre>
-				</section>
-				 -->
-				<!-- <section>
-					<h2>Headings</h2>
-					<img src="img/distiller_headings.png" style="min-height: 500px;" alt="Headings on DrinkDistiller.com">
-				</section> -->
-
-				<section>
-					<h2>Focus Management</h2>
-					<pre><code class="coffeescript">
- class App.FocusManager
-   constructor: ->
-     $('body').on 'focusin', (e) =>
-       @oldFocus = $(e.target)
-
-     App.bind 'rendered', (e) =>
-       return unless @oldFocus
-       @_focusById() if @oldFocus.data('focus-id')
-
-   _focusById: ->
-     focusId = @oldFocus.data('focus-id')
-     newFocus = $("[data-focus-id=#{focusId}]")
-     MyApp.focus(newFocus) if newFocus
-					</code></pre>
-				</section>
-			
-
-        <section>
-					<h2>Tools</h2>
-					<ul>
+					<h2>Testing Tools</h2>
+					<ul class="small">
 						<li>Your Keyboard</li>
-						<li>Android: TalkBack</li>
-						<li>iOS: VoiceOver</li>
-						<li>Mac: VoiceOver</li>
-						<li>Windows: JAWS, WindowEyes, NVDA</li>
+						<li>VoiceOver (iOS, OSX)</li>
+						<li>TalkBack (Android)</li>
+						<li>JAWS, WindowEyes, NVDA</li>
+						<li><a href="https://www.modern.ie/en-us/virtualization-tools" target="_blank" title="Link opens in a new window">Modern.ie Windows VMs</a></li>
+						<li><a href="https://www.virtualbox.org/" target="_blank" title="Link opens in a new window">Virtual Box</a></li>
+            <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en" target="_blank" title="Link opens in a new window">Chrome Accessibility Dev Tools</a></li>
 					</ul>
-					<p>Related: <a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/" target="_blank" title="Link opens a new window">How I Audit a Website for Accessibility</a></p>
         </section>
 
         <section>
           <h2>Resources</h2>
           <ul>
             <li><a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">Using ARIA in HTML</a></li>
-            <li><a href="http://www.paciellogroup.com/blog/2014/09/web-components-punch-list/" target="_blank" title="Link opens in a new window">Web Components Punch List</a></li>
+            <li><a href="http://www.w3.org/TR/html-alt-techniques/" target="_blank" title="Link opens in a new window">Providing Text Alternatives</a></li>
             <li><a href="https://docs.angularjs.org/guide/accessibility/" target="_blank" title="Link opens in a new window">Angular.js A11Y Developer Guide</a></li>
-            <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en" target="_blank" title="Link opens in a new window">Chrome Accessibility Dev Tools</a></li>
+            <li><a href="http://substantial.com/blog/2014/02/05/accessibility-and-the-shadow-dom/" target="_blank" title="Link opens in a new window">Accessibility and the Shadow DOM</a></li>
+            <li><a href="http://www.paciellogroup.com/blog/2014/09/web-components-punch-list/" target="_blank" title="Link opens in a new window">Web Components Punch List</a></li>
             <li><a href="http://webaim.org/projects/screenreadersurvey5/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey</a></li>
-            <li><a href="http://leaverou.github.io/whathecolor/" target="_blank" title="Link opens in a new window">Color Contrast Checker</a></li>
+            <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/" target="_blank" title="Link opens a new window">How I Audit a Website for Accessibility</a></li>
           </ul>
         </section>
 
@@ -466,7 +439,7 @@
  			</div>
 
 			<footer>
-        <p class="copyright">A Web for Everyone<br>
+        <p class="copyright">A Web for Everybody<br>
           <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@marcysutton</a> <span aria-hidden="true">/</span> <a href="http://marcysutton.com" target="_blank" title="Link opens in a new window">MarcySutton.com</a></p>
       </footer>
 		</div>
