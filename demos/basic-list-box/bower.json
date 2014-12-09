@@ -1,0 +1,13 @@
+{
+  "name": "ms-sandbox",
+  "version": "0.0.0",
+  "authors": [
+    "marcysutton <holla@marcysutton.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "basic-list-box": "git@github.com:marcysutton/basic-list-box.git#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master"
+  }
+}
