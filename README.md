@@ -1,5 +1,5 @@
-#A Web for Everyone
-[http://marcysutton.github.io/a-web-for-everyone/](http://marcysutton.github.io/a-web-for-everyone/)
+#A Web for Everybody
+[http://marcysutton.github.io/a-web-for-everybody/](http://marcysutton.github.io/a-web-for-everybody/)
 
 By [Marcy Sutton](http://marcysutton.com)<br>
 Developer at [Substantial](http://substantial.com) and accessibility engineer on Angular.js Material Design<br>
