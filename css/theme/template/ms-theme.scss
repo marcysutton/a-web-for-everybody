@@ -225,6 +225,9 @@ body {
     font-size: 1.45em;
     // font-weight: bold;
   }
+  h5, .h5-style {
+    font-size: 1.25em;
+  }
   h2 strong,
   h3 strong {
     color: $linkColor;
@@ -437,9 +440,9 @@ body {
       margin: 0;
       position: absolute;
       max-width: 420px;
-  
+
       transform:rotate(-5deg);
-      -ms-transform:rotate(-5deg); 
+      -ms-transform:rotate(-5deg);
       -moz-transform:rotate(-5deg);
       -webkit-transform:rotate(-5deg);
       -o-transform:rotate(-5deg);
@@ -449,14 +452,14 @@ body {
       -o-transition: all 0.2s linear;
       -ms-transition: all 0.2s linear;
       transition: all 0.2s linear;
-      
+
       /*** Fix for Webkit to resolve the flickering issue
            Suggested by erikhatfield ***/
       -webkit-transform-style: preserve-3d;
-  
+
       &:nth-child(2) {
         transform:rotate(-8deg);
-        -ms-transform:rotate(-8deg); 
+        -ms-transform:rotate(-8deg);
         -moz-transform:rotate(-8deg);
         -webkit-transform:rotate(-8deg);
         -o-transform:rotate(-8deg);
@@ -466,7 +469,7 @@ body {
 
       &:nth-child(3) {
         transform:rotate(2deg);
-        -ms-transform:rotate(2deg); 
+        -ms-transform:rotate(2deg);
         -moz-transform:rotate(2deg);
         -webkit-transform:rotate(2deg);
         -o-transform:rotate(2deg);
@@ -475,7 +478,7 @@ body {
 
       &:nth-child(4) {
         transform:rotate(-8deg);
-        -ms-transform:rotate(-8deg); 
+        -ms-transform:rotate(-8deg);
         -moz-transform:rotate(-8deg);
         -webkit-transform:rotate(-8deg);
         -o-transform:rotate(-8deg);
@@ -484,14 +487,14 @@ body {
 
       &:nth-child(5) {
         transform:rotate(7deg);
-        -ms-transform:rotate(7deg); 
+        -ms-transform:rotate(7deg);
         -moz-transform:rotate(7deg);
         -webkit-transform:rotate(7deg);
         -o-transform:rotate(7deg);
         margin-left: 60%;
         margin-top: 260px;
       }
-    
+
      img {
         border: none;
         margin: 0;
@@ -499,15 +502,15 @@ body {
         max-height: 100%;
       }
 
-      &:hover, &:focus { 
+      &:hover, &:focus {
         box-shadow: none;
         z-index: 999;
         transform:rotate(0deg);
-        -ms-transform:rotate(0deg); 
+        -ms-transform:rotate(0deg);
         -moz-transform:rotate(0deg);
         -webkit-transform:rotate(0deg);
         -o-transform:rotate(0deg);
-        
+
         -webkit-transition: all 0.2s linear;
         -moz-transition: all 0.2s linear;
         -o-transition: all 0.2s linear;
@@ -719,7 +722,7 @@ body {
     margin: 0 auto;
 
     p {
-      font-size: 0.85em;
+      font-size: 0.75em;
       margin-bottom: 0;
     }
     pre code {

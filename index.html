@@ -186,7 +186,10 @@
         <section>
           <h2 class="h3-style">Enable the keyboard!</h2>
           <pre><code class="html">
- &lt;button ng-click="clickHandler()"&gt;Inbox&lt;/button&gt;
+ &lt;core-item style="cursor:pointer;"&gt;Inbox&lt;/core-item&gt; // NOPE.
+          </code></pre>
+          <pre><code class="html">
+ &lt;button ng-click="clickHandler()"&gt;Inbox&lt;/button&gt; // YEP!
           </code></pre>
 
           <pre><code class="html">
@@ -211,8 +214,36 @@
           <ul>
             <li>Use native elements</li>
             <li>Add <a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">ARIA</a> attributes</li>
-            <li><a href="http://pascalprecht.github.io/2014/07/14/inheritance-and-composition-with-polymer/" target="_blank" title="Link opens in a new window">Extend</a> native elements</li>
+            <li><a href="http://pascalprecht.github.io/2014/07/14/inheritance-and-composition-with-polymer/" target="_blank" title="Link opens in a new window">Extend</a> native elements*</li>
           </ul>
+        </section>
+
+        <section>
+          <h2 class="h3-style">ARIA Core Components</h2>
+          <div class="definition inset-width" style="margin-top: 0">
+            <h3 class="h5-style" style="margin-bottom:0">Roles</h3>
+            <p class="smaller">What does this thing do?</p>
+            <pre><code class="html">
+    &lt;div role="img" style="background-image..."&gt;
+            </code></pre>
+          </div>
+          <div class="definition inset-width">
+            <h3 class="h5-style" style="margin-bottom:0">States</h3>
+            <p class="smaller">The current condition of this particular thing</p>
+            <pre><code class="html">
+    &lt;md-input aria-disabled="true"&gt;
+            </code></pre>
+          </div>
+          <div class="definition inset-width">
+            <h3 class="h5-style">Properties</h3>
+            <pre><code class="html">
+  &lt;md-radio-button aria-label="Unsubscribe"&gt;
+            </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Use the simplest abstraction possible.</h2>
         </section>
 
         <section>
@@ -414,11 +445,11 @@
           <ul>
             <li><a href="http://www.w3.org/TR/aria-in-html/" target="_blank" title="Link opens in a new window">Using ARIA in HTML</a></li>
             <li><a href="http://www.w3.org/TR/html-alt-techniques/" target="_blank" title="Link opens in a new window">Providing Text Alternatives</a></li>
-            <li><a href="https://docs.angularjs.org/guide/accessibility/" target="_blank" title="Link opens in a new window">Angular.js A11Y Developer Guide</a></li>
+            <li><a href="http://webaim.org/projects/screenreadersurvey5/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey</a></li>
             <li><a href="http://substantial.com/blog/2014/02/05/accessibility-and-the-shadow-dom/" target="_blank" title="Link opens in a new window">Accessibility and the Shadow DOM</a></li>
             <li><a href="http://www.paciellogroup.com/blog/2014/09/web-components-punch-list/" target="_blank" title="Link opens in a new window">Web Components Punch List</a></li>
-            <li><a href="http://webaim.org/projects/screenreadersurvey5/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey</a></li>
             <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/" target="_blank" title="Link opens a new window">How I Audit a Website for Accessibility</a></li>
+            <li><a href="https://docs.angularjs.org/guide/accessibility/" target="_blank" title="Link opens in a new window">Angular.js A11Y Developer Guide</a></li>
           </ul>
         </section>
 
