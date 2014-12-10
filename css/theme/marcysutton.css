@@ -367,7 +367,7 @@
       -webkit-transform: rotate(-8deg);
       -o-transform: rotate(-8deg);
       margin-top: 260px;
-      margin-left: 30%; }
+      margin-left: 32%; }
     .reveal .collage a:nth-child(3) {
       transform: rotate(2deg);
       -ms-transform: rotate(2deg);
@@ -388,7 +388,7 @@
       -moz-transform: rotate(7deg);
       -webkit-transform: rotate(7deg);
       -o-transform: rotate(7deg);
-      margin-left: 60%;
+      margin-left: 65%;
       margin-top: 260px; }
     .reveal .collage a img {
       border: none;
