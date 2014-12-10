@@ -92,8 +92,7 @@
             </a>
           </div>
           <aside class="notes">
-						Why I care about acccessibility.
-
+            I like accessibility because it's an innovative challenge that has potential to help people.
           </aside>
 				</section>
 
@@ -101,14 +100,17 @@
 					<h2 class="h1-style">A Web for Everybody</h2>
 					<p>Marcy Sutton, Developer @Substantial<br>Angular.js Accessibility &amp; Material Design</p>
 					<p><a href="http://bit.ly/smashingconf">http://bit.ly/smashingconf</a></p>
+          <aside class="notes">
+          Legal argument vs. innovation argument
+          </aside>
 				</section>
 
 				<section>
 					<h2>Today!</h2>
 					<ul>
 						<li>Assumptions</li>
+            <li>Accessible UIs</li>
 						<li>Web Components</li>
-						<li>Accessible UIs</li>
 						<li>Resources</li>
 					</ul>
 				</section>
@@ -220,30 +222,31 @@
 
         <section>
           <h2 class="h3-style">ARIA Core Components</h2>
-          <div class="definition inset-width" style="margin-top: 0">
-            <h3 class="h5-style" style="margin-bottom:0">Roles</h3>
+          <div class="definition inset-width">
+            <h3 class="h5-style">Roles</h3>
             <p class="smaller">What does this thing do?</p>
             <pre><code class="html">
-    &lt;div role="img" style="background-image..."&gt;
+   &lt;div role="img" style="background-image..."&gt;
             </code></pre>
           </div>
           <div class="definition inset-width">
-            <h3 class="h5-style" style="margin-bottom:0">States</h3>
+            <h3 class="h5-style">States</h3>
             <p class="smaller">The current condition of this particular thing</p>
             <pre><code class="html">
-    &lt;md-input aria-disabled="true"&gt;
+        &lt;md-input aria-disabled="true"&gt;
             </code></pre>
           </div>
           <div class="definition inset-width">
             <h3 class="h5-style">Properties</h3>
             <pre><code class="html">
-  &lt;md-radio-button aria-label="Unsubscribe"&gt;
+      &lt;md-checkbox aria-label="Subscribe"&gt;
             </code></pre>
           </div>
         </section>
 
         <section>
-          <h2>Use the simplest abstraction possible.</h2>
+          <h2 class="h1-style">Use the simplest abstraction possible.</h2>
+          <p>Don't overdo it.</p>
         </section>
 
         <section>
@@ -280,13 +283,13 @@
 
         <section>
           <a href="http://marcysutton.github.io/angular-a11y/demos/scroll-ui/" target="_blank" title="Link opens in a new window">
-            <h2>Let's Try This Again</h2>
+            <h2>Let&rsquo;s Try This Again</h2>
             <p>Accessible Scroll UI Demo</p>
           </a>
         </section>
 
         <section>
-          <h2>Handling Focus</h2>
+          <h2 class="h3-style">Handling Focus</h2>
           <div class="full-screen-code">
             <pre><code class="javascript">
  $scope.$watch('airportIsSelected', function(newValue){
@@ -305,7 +308,7 @@
         </section>
 
         <section>
-          <h2>Alerting the User</h2>
+          <h2 class="h3-style">Alerting the User</h2>
           <pre><code class="html">
   &lt;status-bar aria-live="polite"&gt;&lt;/status-bar&gt;
           </code></pre>
@@ -340,7 +343,7 @@
 
    _focusById: ->
      focusId = @oldFocus.data('focus-id')
-     newFocus = $("[data-focus-id=#{focusId}]")
+     newFocus = document.querySelector("##{focusId}")
      MyApp.focus(newFocus) if newFocus
           </code></pre>
         </section>
@@ -354,9 +357,10 @@
           <pre><code class="css">
        [role=img] {
          background-size: cover;
-         display: block;
+         background-position: center right;
+         height: 100%;
+         width: 100%;
        }
-
           </code></pre>
           <p><a href="http://codepen.io/marcysutton/pen/yJFjg">Codepen Experiment</a></p>
         </section>
@@ -373,11 +377,37 @@
 					</aside>
 				</section>
 
+       <!-- <section>
+          <div class="full-screen-code smaller">
+            <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+
+    &lt;title&gt;basic-list-box&lt;/title&gt;
+
+    &lt;link rel="import" href="components/basic-framed-content/basic-framed-content.html"&gt;
+    &lt;link rel="import" href="components/basic-list-box/basic-list-box.html"&gt;
+  &lt;/head&gt;
+
+  &lt;body unresolved&gt;
+    &lt;basic-framed-content&gt;
+      &lt;basic-list-box id="list" tabIndex="0" aria-label="Fruit Ingredients"&gt;
+        &lt;div&gt;Acai&lt;/div&gt;
+        &lt;div&gt;Acerola&lt;/div&gt;
+        ...
+            </code></pre>
+          </div>
+        </section>-->
+
 				<section>
 					<h2>Typical Web Component</h2>
-					<a href="http://basic-web-components.github.io/components/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox.png" alt="Listbox Web Component" style="min-height: 500px;"></a>
+					<a href="demos/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox.png" alt="Listbox Web Component" style="min-height: 500px;"></a>
 					<aside class="notes">
 						What is the accessibility problem?
+            SHOW the SOURCE!!!!!
 					</aside>
 				</section>
 
@@ -424,7 +454,7 @@
 
 				<section>
 					<h2>Revisiting the Basic List Box</h2>
-					<a href="demos/basic-list-box/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox-a11y.png" alt="Accessible Listbox Web Component" style="min-height: 500px;"></a>
+					<a href="demos/basic-list-box-a11y/" target="_blank" title="Link opens in a new window"><img src="img/webcomponent-listbox-a11y.png" alt="Accessible Listbox Web Component" style="min-height: 500px;"></a>
 				</section>
 
         <section>
@@ -434,8 +464,8 @@
 						<li>VoiceOver (iOS, OSX)</li>
 						<li>TalkBack (Android)</li>
 						<li>JAWS, WindowEyes, NVDA</li>
-						<li><a href="https://www.modern.ie/en-us/virtualization-tools" target="_blank" title="Link opens in a new window">Modern.ie Windows VMs</a></li>
 						<li><a href="https://www.virtualbox.org/" target="_blank" title="Link opens in a new window">Virtual Box</a></li>
+            <li><a href="https://www.modern.ie/en-us/virtualization-tools" target="_blank" title="Link opens in a new window">Modern.ie Windows VMs</a></li>
             <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en" target="_blank" title="Link opens in a new window">Chrome Accessibility Dev Tools</a></li>
 					</ul>
         </section>
@@ -447,7 +477,6 @@
             <li><a href="http://www.w3.org/TR/html-alt-techniques/" target="_blank" title="Link opens in a new window">Providing Text Alternatives</a></li>
             <li><a href="http://webaim.org/projects/screenreadersurvey5/" target="_blank" title="Link opens in a new window">WebAIM Screen Reader Survey</a></li>
             <li><a href="http://substantial.com/blog/2014/02/05/accessibility-and-the-shadow-dom/" target="_blank" title="Link opens in a new window">Accessibility and the Shadow DOM</a></li>
-            <li><a href="http://www.paciellogroup.com/blog/2014/09/web-components-punch-list/" target="_blank" title="Link opens in a new window">Web Components Punch List</a></li>
             <li><a href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/" target="_blank" title="Link opens a new window">How I Audit a Website for Accessibility</a></li>
             <li><a href="https://docs.angularjs.org/guide/accessibility/" target="_blank" title="Link opens in a new window">Angular.js A11Y Developer Guide</a></li>
           </ul>

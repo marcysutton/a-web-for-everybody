@@ -128,7 +128,13 @@ body {
   }
   .full-screen-code {
     pre {
+      height: 100%;
       width: 100%;
+
+      code {
+        max-height: 100%;
+        font-size: 1.85em;
+      }
     }
   }
   .text-background {
@@ -202,7 +208,6 @@ body {
   	text-transform: $headingTextTransform;
   }
   p, small, ul, ol, div.large-tag, figcaption, blockquote, dd, dt {
-    // text-shadow: $paragraphTextShadow;
     line-height: 1.5;
   }
   h1, h2.h1-style, h3.h1-style {
@@ -223,7 +228,6 @@ body {
   h3.h4-style,
   p.h4-style {
     font-size: 1.45em;
-    // font-weight: bold;
   }
   h5, .h5-style {
     font-size: 1.25em;
@@ -243,14 +247,13 @@ body {
     margin-right: 1em;
     text-align: right;
   }
+  .italic {
+    font-style: italic;
+  }
   small {
     font-size: 0.85em;
     letter-spacing: 0;
     text-transform: none;
-  }
-  em {
-    // font-family: $;
-    // font-style: normal;
   }
   blockquote {
     background-color: transparent;
@@ -721,12 +724,24 @@ body {
   .definition {
     margin: 0 auto;
 
+    &:first-of-type {
+      margin-top: 0;
+    }
+    h3 {
+      margin-bottom: 0;
+    }
     p {
       font-size: 0.75em;
       margin-bottom: 0;
     }
-    pre code {
-      font-size: 1.5em;
+    pre {
+      margin-top: 0.5em;
+
+      code {
+        font-size: 1.5em;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
   .separator {
@@ -744,10 +759,6 @@ body {
     margin: 1em auto 0;
     position: relative;
     width: 70%;
-
-    pre {
-      margin-top: 0;
-    }
   }
   .inset-width-smaller {
     margin: 1em auto 0;
