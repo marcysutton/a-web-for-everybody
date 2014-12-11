@@ -275,11 +275,6 @@ Fired when an item element is tapped.
         this.excludedLocalNamesChanged();
         this.observer = new MutationObserver(this.updateSelected.bind(this));
 
-        if(this.children.length){
-          for(var i=0; i<this.children.length; i++){
-            this.children[i].setAttribute('aria-selected', false);
-          }
-        }
         if (!this.target) {
           this.target = this;
         }
@@ -459,8 +454,6 @@ Fired when an item element is tapped.
         if (this.selectedClass) {
           item.classList.toggle(this.selectedClass, isSelected);
         }
-
-        item.setAttribute('aria-selected', isSelected);
 
         if (this.selectedProperty) {
           item[this.selectedProperty] = isSelected;
